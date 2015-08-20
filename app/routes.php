@@ -11,7 +11,15 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome');
+
+Route::get('summary', 'HomeController@showSummary');
+
+Route::get('detail', 'HomeController@showDetail');
+
+Route::get('portfolio', 'HomeController@showPortfolio');
+
+// Route::get('resume', function()
+// {
+// 	return View::make('resume');
+// });
