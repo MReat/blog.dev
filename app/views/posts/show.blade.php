@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	Professional Summary - Matthew J Reat
+Posts
 @stop
 
 @section('navbar')
@@ -21,9 +21,9 @@
 	        <div id="navbarCollapse" class="collapse navbar-collapse">
 	            <ul class="nav navbar-nav">
 	                <li><a href="/summary">Professional Summary</a></li>
-	                <li class="active"><a href="/detail">Professional Detail</a></li>
+	                <li><a href="/detail">Professional Detail</a></li>
 	                <li><a href="/portfolio">Portfolio</a></li>
-	                <li><a href="/posts">Posts</a></li>
+	                <li class="active"><a href="/posts">Posts</a></li>
 	            </ul>
 	        </div>
 	    </div>
@@ -31,6 +31,16 @@
 @stop
 
 @section('content')
- <h1>UNDER CONSTRUCTION</h1>
-@stop
+<h2>{{{ $post->title }}}</h2>
+<p>Date created on: {{{ $post->created_at}}}</p>
 
+@if (isset($post->date_updated))
+<p>Update on: {{{ $post->updated_at}}}</p>
+@endif
+
+<p>{{{$post->body}}}</p>
+
+<a href="{{{ action('PostsController@index')}}}">Back to Index</a>
+
+
+@stop

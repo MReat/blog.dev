@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	Professional Summary - Matthew J Reat
+Posts
 @stop
 
 @section('navbar')
@@ -21,9 +21,9 @@
 	        <div id="navbarCollapse" class="collapse navbar-collapse">
 	            <ul class="nav navbar-nav">
 	                <li><a href="/summary">Professional Summary</a></li>
-	                <li class="active"><a href="/detail">Professional Detail</a></li>
+	                <li><a href="/detail">Professional Detail</a></li>
 	                <li><a href="/portfolio">Portfolio</a></li>
-	                <li><a href="/posts">Posts</a></li>
+	                <li class="active"><a href="/posts">Posts</a></li>
 	            </ul>
 	        </div>
 	    </div>
@@ -31,6 +31,23 @@
 @stop
 
 @section('content')
- <h1>UNDER CONSTRUCTION</h1>
-@stop
+	<div class="container well col-md-8">
+		<h1>Posts Input</h1>
+		<form action="{{{ action('PostsController@store')}}}" method="POST" accept-charset="UTF-8">
+			<div class="row">
+				<label name="title" for="title">Title</label>
+				<input type="text" name="title" value="{{{ Input::old('title') }}}" placeholder="Title">
+			</div>
 
+			<div class="row">
+				<label name="body" for="body">Body</label>
+				<textarea type="text" name="body" placeholder="Body">{{{ Input::old('body') }}}</textarea>
+			<div>
+
+			<div class="row">	
+				<button type="submit">Submit</button>
+			</div>
+			
+		</form>
+	</div>
+@stop

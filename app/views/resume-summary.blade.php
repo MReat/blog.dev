@@ -23,6 +23,7 @@
 	                <li class="active"><a href="/summary">Professional Summary</a></li>
 	                <li><a href="/detail">Professional Detail</a></li>
 	                <li><a href="/portfolio">Portfolio</a></li>
+	                <li><a href="/posts">Posts</a></li>
 	            </ul>
 	        </div>
 	    </div>

@@ -19,6 +19,23 @@ Route::get('detail', 'HomeController@showDetail');
 
 Route::get('portfolio', 'HomeController@showPortfolio');
 
+Route::resource('posts', 'PostsController');
+
+Route::get('orm-test', function ()
+{
+    $post1 = new Post();
+    $post1->title = "1st Title";
+    $post1->body = "More words here";
+    $post1->save();
+
+    $post2 = new Post();
+    $post2->title = "2st Title";
+    $post2->body = "Even more words here";
+    $post2->save();
+
+    echo "Successful Posting";
+});
+
 // Route::get('resume', function()
 // {
 // 	return View::make('resume');
