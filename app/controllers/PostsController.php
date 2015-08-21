@@ -65,6 +65,11 @@ class PostsController extends \BaseController {
 	public function show($id)
 	{
 		$post = Post::find($id);
+
+		if(strlen($post->body) > 100) {
+			$post->shortString = substr($post->body, 0, 25) . "...";
+		}
+
 		return View::make('posts.show')->with('post', $post);
 	
 	}

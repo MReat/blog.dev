@@ -32,16 +32,27 @@ Posts
 
 @section('content')
 	<h2>Blog Posts</h2>
-	<a href="{{{ action('PostsController@create') }}}" class="btn btn-default">Create a Post</a>
-	{{ $posts->links() }}
+	<a href="{{{ action('PostsController@create') }}}" class="btn btn-default">
+		<span class="glyphicon glyphicon-pencil"></span> Create a Post</a>
 	
 	@foreach ($posts as $post)
 		
 		<h3>Post Title: {{{ $post->title }}}</h3>
+		@if (isset($post->shortString))
+		<p>Post Material: {{{ $post->shortString }}}<p>
+		@else
+		<p>Post Material: {{{ $post->body }}}<p>
+		@endif
 
-		<a href="{{{ action('PostsController@show', $post->id) }}}" class="btn btn-default">Read Post</a>
+		<a href="{{{ action('PostsController@show', $post->id) }}}" class="btn btn-default">
+			<span class="glyphicon glyphicon-book"></span> Read Post</a>
 
 	@endforeach
 
+	<div class="container" id="paginate">
+
+		{{ $posts->links() }}
+	
+	</div>
 
 @stop
