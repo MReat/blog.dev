@@ -33,6 +33,8 @@ Posts
 @section('content')
 	<h2>Blog Posts</h2>
 	<a href="{{{ action('PostsController@create') }}}" class="btn btn-default">Create a Post</a>
+	{{ $posts->links() }}
+	
 	@foreach ($posts as $post)
 		
 		<h3>Post Title: {{{ $post->title }}}</h3>
@@ -41,7 +43,5 @@ Posts
 
 	@endforeach
 
-	<div class="row">
-	</div>
 
 @stop

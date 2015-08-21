@@ -16,6 +16,14 @@
 	
 	@yield('image')
 
+	@if($errors->has())
+		<ul>
+			@foreach ($errors->all() as $error)
+				<div class="alert alert-danger" role="alert"><li>{{{ $error }}}</li></div>
+			@endforeach
+		</ul>
+	@endif
+
 	<main class="container">
 	@yield('content')
 	</main>

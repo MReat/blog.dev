@@ -34,18 +34,23 @@ Posts
 	<div class="container well col-md-8">
 		<h1>Posts Input</h1>
 		<form action="{{{ action('PostsController@store')}}}" method="POST" accept-charset="UTF-8">
-			<div class="row">
-				<label name="title" for="title">Title</label>
-				<input type="text" name="title" value="{{{ Input::old('title') }}}" placeholder="Title">
+			
+			<input type="hidden" name="_method" value="PUT">
+			{{ Form::token() }}
+			
+			<div class="form-group @if($errors->has('title')) has-error @endif">
+				<label class="contro-label" name="title" for="title">Title</label>
+				<input type="text" name="title" class="form-control"value="{{{ Input::old('title') }}}" placeholder="Title">
 			</div>
 
-			<div class="row">
-				<label name="body" for="body">Body</label>
-				<textarea type="text" name="body" placeholder="Body">{{{ Input::old('body') }}}</textarea>
+			<div class="form-group @if($errors->has('body')) has-error @endif">
+				<label class="contro-label" name="body" for="body">Body</label>
+				<textarea type="text" class="form-control" name="body" placeholder="Body">
+					{{{ Input::old('body') }}}</textarea>
 			<div>
 
-			<div class="row">	
-				<button type="submit">Submit</button>
+			<div class="form-group">	
+				<button class="btn btn-primary" type="submit">Submit</button>
 			</div>
 			
 		</form>

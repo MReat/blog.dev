@@ -31,7 +31,7 @@ Posts
 @stop
 
 @section('content')
-	<h1>Posts Input</h1>
+	<h1>{{{ $post->title }}}</h1>
 	<form action="{{{ action('PostsController@edit')}}}" method="POST" accept-charset="UTF-8">
 		<label name="title" for="title">Title</label>
 		<input type="text" name="title" value="{{{ Input::old('title') }}}" placeholder="Title">
