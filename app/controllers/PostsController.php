@@ -59,7 +59,7 @@ class PostsController extends \BaseController {
 			$post->body =  Input::get('body');
 			$post->save();
 
-			Log::info('Log Message', array('context' => Input::all()));
+			Log::info('Log Message', Input::all());
 
 			Session::flash('successMessage', 'Submission successfully completed');
 
