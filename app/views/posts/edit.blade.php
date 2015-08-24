@@ -30,16 +30,50 @@ Posts
 	</nav>
 @stop
 
+
 @section('content')
-	<h1>{{{ $post->title }}}</h1>
-	<form action="{{{ action('PostsController@edit')}}}" method="POST" accept-charset="UTF-8">
-		<label name="title" for="title">Title</label>
-		<input type="text" name="title" value="{{{ Input::old('title') }}}" placeholder="Title">
+	<div class="container well col-md-8">
+		<h1>Posts Input</h1>
+		{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
+			
+			<div class="form-group @if($errors->has('title')) has-error @endif">
+				{{ Form::label('title', 'Title') }}
+				{{ Form::text('title', null, ['class' => 'form-control']) }}
+			</div>
 
-		<label name="body" for="body">Body</label>
-		<textarea type="text" name="body" placeholder="Body">{{{ Input::old('body') }}}</textarea>
+			<div class="form-group @if($errors->has('title')) has-error @endif">
+				{{ Form::label('body', 'Body') }}
+				{{ Form::textarea('body', null, ['class' => 'form-control']) }}
+			</div>
 
-		<button type="submit">Submit</button>
-		
-	</form>
+			<div class="form-group">	
+				<button class="btn btn-primary">Edit</button>
+				<a class="btn btn-primary" type='submit' href="{{{ action('PostsController@show', $post->id)}}}">Cancel</a> 
+
+				<a class="btn btn-danger" type="submit" id="delete">Delete</a>
+			</div>
+			
+		{{ Form::close() }}
+	</div>
 @stop
+
+@section('script')
+	<script>
+		
+		(function () {
+			"use strict";
+			$('#delete').on('click', function() {
+				
+				var onConfirm = confirm('Are you sure you want to delete this post?');
+
+				if(onConfirm) {
+					$('#formDelete').submit();
+				}
+
+			})
+		})();
+	
+	</script>
+
+@stop
+

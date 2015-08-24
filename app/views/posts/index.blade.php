@@ -44,6 +44,12 @@ Posts
 		<p>Post Material: {{{ $post->body }}}<p>
 		@endif
 
+		<p>Date created on: {{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
+
+		@if (isset($post->date_updated))
+		<p>Update on: {{{ $post->updated_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
+		@endif
+
 		<a href="{{{ action('PostsController@show', $post->id) }}}" class="btn btn-default">
 			<span class="glyphicon glyphicon-book"></span> Read Post</a>
 

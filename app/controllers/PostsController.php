@@ -10,6 +10,12 @@ class PostsController extends \BaseController {
 	public function index()
 	{
 		$posts = Post::paginate(4);
+		foreach($posts as $post){
+			if(strlen($post->body) > 100) {
+			$post->shortString = substr($post->body, 0, 100) . "...";
+			}
+		}
+
 		return View::make('posts.index')->with('posts', $posts);
 	}
 
@@ -42,6 +48,9 @@ class PostsController extends \BaseController {
 	    // attempt validation
 	    if ($validator->fails()) {
 	        // validation failed, redirect to the post create page with validation errors and old inputs
+
+	        Session::flash('errorMessage', 'An error has occurred.  Please see below for error: ');
+
 	        return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
 	        // validation succeeded, create and save the post
@@ -49,6 +58,8 @@ class PostsController extends \BaseController {
 			$post->title =  Input::get('title');
 			$post->body =  Input::get('body');
 			$post->save();
+
+			Session::flash('successMessage', 'Submission successfully completed');
 
 			return Redirect::action('PostsController@index');
 	    }
@@ -96,11 +107,25 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
+		// create the validator
+	    $validator = Validator::make(Input::all(), Post::$rules);
+
+	    // attempt validation
+	    if ($validator->fails()) {
+	        // validation failed, redirect to the post create page with validation errors and old inputs
+	        return Redirect::back()->withInput()->withErrors($validator);
+	    
+	    } else {
+	        // validation succeeded, create and save the post
+		
 		$post = Post::find($id);
 		$post->title = Input::get('title');
 		$post->body = Input::get('body');
 		$post->save();
-		return Redirect::action('PostsController@show', array($id));
+		
+		return Redirect::action('PostsController@index', array($id));
+	    }
+
 	}
 
 
@@ -112,10 +137,9 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$post = Post::find('id');
-		$post->delete();
+		Post::find($id)->delete();
 		return Redirect::action('PostsController@index');
 	}
 
-
+	
 }

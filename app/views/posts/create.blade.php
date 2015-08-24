@@ -35,7 +35,6 @@ Posts
 		<h1>Posts Input</h1>
 		<form action="{{{ action('PostsController@store')}}}" method="POST" accept-charset="UTF-8">
 			
-			<input type="hidden" name="_method" value="PUT">
 			{{ Form::token() }}
 			
 			<div class="form-group @if($errors->has('title')) has-error @endif">
@@ -51,8 +50,18 @@ Posts
 
 			<div class="form-group">	
 				<button class="btn btn-primary" type="submit">Submit</button>
+				<a class="btn btn-primary" href="{{{ action('PostsController@index')}}}">Cancel</a>
 			</div>
 			
 		</form>
 	</div>
 @stop
+
+
+{{-- @section('content')
+
+	@include('posts.create-edit-form')
+
+
+
+@stop --}}

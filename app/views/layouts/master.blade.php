@@ -15,6 +15,14 @@
 	@yield('navbar')
 	
 	@yield('image')
+	
+	@if (Session::has('successMessage'))
+	    <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+	@endif
+	
+	@if (Session::has('errorMessage'))
+	    <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+	@endif
 
 	@if($errors->has())
 		<ul>
@@ -33,6 +41,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+@yield('script')
 
 </body>
 </html>

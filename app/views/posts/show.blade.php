@@ -32,15 +32,21 @@ Posts
 
 @section('content')
 <h2>{{{ $post->title }}}</h2>
-<p>Date created on: {{{ $post->created_at}}}</p>
+<p>Date created on: {{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
 
 @if (isset($post->date_updated))
-<p>Update on: {{{ $post->updated_at}}}</p>
+<p>Update on: {{{ $post->updated_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
 @endif
 
 <p>{{{$post->body}}}</p>
 
-<a href="{{{ action('PostsController@index')}}}">Back to Index</a>
+<a class="btn btn-primary" href="{{{ action('PostsController@index')}}}">Back to Index</a>
+<a class="btn btn-primary" href="{{{ action('PostsController@edit', $post->id) }}}">Edit Post</a>
 
+
+{{ Form::open(array('action' => array('PostsController@destroy', $post->id), 'method' => 'DELETE', 'id' => 'formDelete')) }}
+{{ Form::close() }}
 
 @stop
+
+
