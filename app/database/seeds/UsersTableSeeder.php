@@ -7,6 +7,30 @@ class UsersTableSeeder extends Seeder
 	{
 		User::truncate();
 
+		$this->createEnvUser();
+		$this->createFakeUsers();
+		
+	}
+
+
+	protected function createFakeUsers()
+	{
+		$faker = Faker::create();
+
+		for($i = 0; $i <30; $i++){
+			$user = new User();
+			$user->first_name = $faker->firstName;
+			$user->last_name = $faker->lastName;
+			$user->email = $faker->email;
+			$user->password = $faker->password;
+			$user->save();
+
+		}
+
+	}
+
+	protected function createEnvUser()
+	{
 		$user = new User();
 		$user->first_name = $_ENV['USER_FIRST_NAME'];
 		$user->last_name = $_ENV['USER_LAST_NAME'];
