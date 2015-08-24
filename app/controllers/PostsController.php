@@ -59,6 +59,8 @@ class PostsController extends \BaseController {
 			$post->body =  Input::get('body');
 			$post->save();
 
+			Log::info('Log Message', array('context' => Input::all()));
+
 			Session::flash('successMessage', 'Submission successfully completed');
 
 			return Redirect::action('PostsController@index');
@@ -76,6 +78,13 @@ class PostsController extends \BaseController {
 	public function show($id)
 	{
 		$post = Post::find($id);
+
+		if(!$post) {
+		
+			Session::flash('errorMessage', "The post id of $id is not found");
+
+			App::abort(404);
+		}
 
 		if(strlen($post->body) > 100) {
 			$post->shortString = substr($post->body, 0, 25) . "...";
@@ -110,6 +119,7 @@ class PostsController extends \BaseController {
 		// create the validator
 	    $validator = Validator::make(Input::all(), Post::$rules);
 
+
 	    // attempt validation
 	    if ($validator->fails()) {
 	        // validation failed, redirect to the post create page with validation errors and old inputs
@@ -117,6 +127,17 @@ class PostsController extends \BaseController {
 	    
 	    } else {
 	        // validation succeeded, create and save the post
+
+	    if(!$post) {
+
+	    	$message = "Post with id of $id is not found.";
+
+	    	Log::warning($message);
+		
+			Session::flash('errorMessage', "The post id of $id is not found");
+
+			App::abort(404);
+		}
 		
 		$post = Post::find($id);
 		$post->title = Input::get('title');
@@ -141,5 +162,5 @@ class PostsController extends \BaseController {
 		return Redirect::action('PostsController@index');
 	}
 
-	
+
 }
