@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration {
 			$table->string('title', 128);
 			$table->text('body');
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 
@@ -29,6 +30,7 @@ class CreatePostsTable extends Migration {
 	public function down()
 	{
 		Schema::drop('posts');
+	
 	}
 
 }

@@ -32,6 +32,7 @@ Posts
 
 @section('content')
 <h2>{{{ $post->title }}}</h2>
+<p>{{{ $post->user->first_name}}}</p>
 <p>Date created on: {{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
 
 @if (isset($post->date_updated))

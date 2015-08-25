@@ -35,9 +35,10 @@ Posts
 	<a href="{{{ action('PostsController@create') }}}" class="btn btn-default">
 		<span class="glyphicon glyphicon-pencil"></span> Create a Post</a>
 	
-	@foreach ($posts as $post)
+	@foreach (Post::with('user')->get() as $post)
 		
 		<h3>Post Title: {{{ $post->title }}}</h3>
+		<p>Authored by: {{{ $post->user->first_name}}}</p>
 		@if (isset($post->shortString))
 		<p>Post Material: {{{ $post->shortString }}}<p>
 		@else

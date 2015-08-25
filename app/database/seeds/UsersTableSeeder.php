@@ -1,11 +1,11 @@
 <?php 
 
+use Faker\Factory as Faker;
 
 class UsersTableSeeder extends Seeder
 {
 	public function run()
 	{
-		User::truncate();
 
 		$this->createEnvUser();
 		$this->createFakeUsers();

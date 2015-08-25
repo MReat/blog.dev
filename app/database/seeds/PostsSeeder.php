@@ -14,6 +14,7 @@ class PostsSeeder extends Seeder
 			$post = new Post();
 			$post->title = $faker->CatchPhrase;
 			$post->body = $faker->bs . ' and International ' . $faker->bs;
+			$post->user_id = User::all()->random(1)->id;
 			$post->save();
 		}
 
