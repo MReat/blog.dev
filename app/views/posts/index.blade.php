@@ -1,58 +1,46 @@
 @extends('layouts.master')
+@include('layouts.navbar')
 
 @section('title')
 Posts
 @stop
 
-@section('navbar')
-	<nav role="navigation" class="navbar navbar-default">
-	    <div class="container">
-	        <!-- Brand and toggle get grouped for better mobile display -->
-	        <div class="navbar-header">
-	            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-	                <span class="sr-only">Toggle navigation</span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	            </button>
-	            <a href="/" class="navbar-brand">Home</a>
-	        </div>
-	        <!-- Collection of nav links and other content for toggling -->
-	        <div id="navbarCollapse" class="collapse navbar-collapse">
-	            <ul class="nav navbar-nav">
-	                <li><a href="/summary">Professional Summary</a></li>
-	                <li><a href="/detail">Professional Detail</a></li>
-	                <li><a href="/portfolio">Portfolio</a></li>
-	                <li class="active"><a href="/posts">Posts</a></li>
-	            </ul>
-	        </div>
-	    </div>
-	</nav>
-@stop
+
+
 
 @section('content')
-	<h2>Blog Posts</h2>
-	<a href="{{{ action('PostsController@create') }}}" class="btn btn-default">
-		<span class="glyphicon glyphicon-pencil"></span> Create a Post</a>
-	
-	@foreach (Post::with('user')->get() as $post)
+	<div class="form-group">
+		<h2>Blog Posts</h2>
 		
-		<h3>Post Title: {{{ $post->title }}}</h3>
-		<p>Authored by: {{{ $post->user->first_name}}}</p>
-		@if (isset($post->shortString))
-		<p>Post Material: {{{ $post->shortString }}}<p>
-		@else
-		<p>Post Material: {{{ $post->body }}}<p>
+		@if(Auth::check()) 
+		<a href="{{{ action('PostsController@create') }}}" class="btn btn-success">
+			<span class="glyphicon glyphicon-pencil"></span> Create a Post</a>
 		@endif
+		
+		<a href="{{{ action('PostsController@index') }}}" class="btn btn-info">
+			<span class="glyphicon glyphicon-th-list"></span> Return to Index</a>
+	</div>
+	
+	@foreach ($posts as $post)
+		<div class="container well col-md-9">
+			<h3><strong>Post Title:  </strong>{{{ $post->title }}}</h3>
+			<p><strong>Authored by: </strong>{{{ $post->user->first_name}}} {{{ $post->user->last_name}}}</p>
 
-		<p>Date created on: {{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
+			<p><strong>Date created on: </strong>{{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
+			@if (isset($post->date_updated))
+			<p><strong>Update on: </strong>{{{ $post->updated_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
+			@endif
 
-		@if (isset($post->date_updated))
-		<p>Update on: {{{ $post->updated_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
-		@endif
+			@if (isset($post->shortString))
+			<p><strong>Post Material: </strong>{{{ $post->shortString }}}<p>
+			@else
+			<p><strong>Post Material: </strong>{{{ $post->body }}}<p>
+			@endif
 
-		<a href="{{{ action('PostsController@show', $post->id) }}}" class="btn btn-default">
-			<span class="glyphicon glyphicon-book"></span> Read Post</a>
+
+			<a href="{{{ action('PostsController@show', $post->id) }}}" class="btn btn-info">
+				<span class="glyphicon glyphicon-book"></span> Read Post</a>
+		</div>
 
 	@endforeach
 

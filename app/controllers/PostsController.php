@@ -2,6 +2,13 @@
 
 class PostsController extends \BaseController {
 
+
+	public function __construct ()
+	{
+		parent::__construct();
+		$this->beforeFilter('auth', array('except' => array('index', 'show')));
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,10 +16,24 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::paginate(4);
+
+		$query = Post::with('user');
+
+		if(Input::has('user')) {
+			$query = Post::with('user')->where('user_id', Auth::id());
+		}
+		
+		if(Input::has('search')){
+			$search = Input::get('search');
+
+			$query->where('title', 'like', "%$search%");
+		};
+
+		$posts = $query->paginate(4);
+		
 		foreach($posts as $post){
-			if(strlen($post->body) > 100) {
-			$post->shortString = substr($post->body, 0, 100) . "...";
+			if(strlen($post->body) > 75) {
+			$post->shortString = substr($post->body, 0, 75) . "...";
 			}
 		}
 
@@ -57,9 +78,10 @@ class PostsController extends \BaseController {
 			$post = new Post();
 			$post->title =  Input::get('title');
 			$post->body =  Input::get('body');
+			$post->user_id = Auth::id();
 			$post->save();
 
-			Log::info('Log Message', Input::all());
+			Log::info('Post successfully saved.', Input::all());
 
 			Session::flash('successMessage', 'Submission successfully completed');
 
@@ -127,24 +149,24 @@ class PostsController extends \BaseController {
 	    
 	    } else {
 	        // validation succeeded, create and save the post
+			$post = Post::find($id);
 
-	    if(!$post) {
+		    if(!$post) {
 
-	    	$message = "Post with id of $id is not found.";
+		    	$message = "Post with id of $id is not found.";
 
-	    	Log::warning($message);
+		    	Log::warning($message);
+			
+				Session::flash('errorMessage', "The post id of $id is not found");
+
+				App::abort(404);
+			}
+			
+			$post->title = Input::get('title');
+			$post->body = Input::get('body');
+			$post->save();
 		
-			Session::flash('errorMessage', "The post id of $id is not found");
-
-			App::abort(404);
-		}
-		
-		$post = Post::find($id);
-		$post->title = Input::get('title');
-		$post->body = Input::get('body');
-		$post->save();
-		
-		return Redirect::action('PostsController@index', array($id));
+			return Redirect::action('PostsController@index', array($id));
 	    }
 
 	}
@@ -158,7 +180,16 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Post::find($id)->delete();
+		$post = Post::find($id);
+		
+		if(!$post){
+			Log::info(Input::all());
+			Session::flash('errorMessage', 'Page not found');
+			App::abort(404);
+		}
+		
+		$post->delete();
+		Log::info(Input::all());
 		return Redirect::action('PostsController@index');
 	}
 

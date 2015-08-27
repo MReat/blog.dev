@@ -21,20 +21,38 @@ Route::get('portfolio', 'HomeController@showPortfolio');
 
 Route::resource('posts', 'PostsController');
 
-Route::get('orm-test', function ()
-{
-    $post1 = new Post();
-    $post1->title = "1st Title";
-    $post1->body = "More words here";
-    $post1->save();
+Route::get('login', 'HomeController@login');
 
-    $post2 = new Post();
-    $post2->title = "2st Title";
-    $post2->body = "Even more words here";
-    $post2->save();
+Route::post('login', 'HomeController@doLogin');
 
-    echo "Successful Posting";
-});
+Route::get('logout', 'HomeController@doLogout');
+
+Route::get('create_user', 'HomeController@createUser');
+
+Route::post('create_user', 'HomeController@saveUser');
+
+Route::get('user_summary', 'HomeController@showUser');
+
+Route::get('update_account', 'HomeController@editUser');
+
+Route::put('update_account', 'HomeController@updateUser');
+
+Route::delete('my_account', 'HomeController@destroyUser'); // do i need this?
+
+// Route::get('orm-test', function ()
+// {
+//     $post1 = new Post();
+//     $post1->title = "1st Title";
+//     $post1->body = "More words here";
+//     $post1->save();
+
+//     $post2 = new Post();
+//     $post2->title = "2st Title";
+//     $post2->body = "Even more words here";
+//     $post2->save();
+
+//     echo "Successful Posting";
+// });
 
 // Route::get('resume', function()
 // {
