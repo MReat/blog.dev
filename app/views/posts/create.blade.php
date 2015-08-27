@@ -7,8 +7,7 @@ Posts
 
 
 @section('content')
-	<div class="col-md-2"></div>
-	<div class="container well col-md-8 center-block" id="create_posts">
+	<div class="container well col-md-8 col-md-offset-2" id="create_posts">
 		<h1>Posts Input</h1>
 		<form action="{{{ action('PostsController@store')}}}" method="POST" accept-charset="UTF-8">
 			

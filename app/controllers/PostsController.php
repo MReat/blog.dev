@@ -23,13 +23,19 @@ class PostsController extends \BaseController {
 			$query = Post::with('user')->where('user_id', Auth::id());
 		}
 		
-		if(Input::has('search')){
-			$search = Input::get('search');
-
-			$query->where('title', 'like', "%$search%");
-		};
-
-		$posts = $query->paginate(4);
+if (Input::has('search')){
+	    	$search = Input::get('search');
+	    	$query->where('title', 'LIKE', '%' . $search . '%');
+	    	$query->orWhereHas('user', function($q){
+	    		$search = Input::get('search');
+	    		$q->where('first_name', 'LIKE', '%' . $search . '%');
+	    	});
+	    	$query->orWhereHas('user', function($q){
+	    		$search = Input::get('search');
+	    		$q->where('last_name', 'LIKE', '%' . $search . '%');
+	    	});
+	    }
+		$posts = $query->orderBy('created_at', 'desc')->paginate(4);
 		
 		foreach($posts as $post){
 			if(strlen($post->body) > 75) {

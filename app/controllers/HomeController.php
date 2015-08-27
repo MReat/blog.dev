@@ -95,8 +95,8 @@ class HomeController extends BaseController {
 		$email = Input::get('email');
 		$password = Input::get('password');
 		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
-		    // return Redirect::intended('/');
-		    return Redirect::action('PostsController@index');
+		    return Redirect::intended('/posts');
+		  
 		} else {
 			//Display session flash
 			//log email that tried to authenticate
@@ -115,8 +115,8 @@ class HomeController extends BaseController {
 		//Display session flash
 		Session::flash('successMessage', 'Logout successfully completed');
 
-		// return Redirect::to('/');
-		return Redirect::action('PostsController@index');
+		return Redirect::to('/posts');
+		
 	}
 
 	public function showUser()

@@ -6,8 +6,7 @@ Update User
 @stop
 
 @section('content')
-	<div class="col-md-2"></div>
-	<div class="container well col-md-8">
+	<div class="container well col-md-8 col-md-offset-2">
 		<h1>Edit User</h1>
 		{{ Form::model($user, array('action' => array('HomeController@updateUser', $user->id), 'method' => 'PUT')) }}
 			

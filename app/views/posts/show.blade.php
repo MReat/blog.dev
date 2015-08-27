@@ -21,10 +21,10 @@ Posts
 
 		<a class="btn btn-info" href="{{{ action('PostsController@index')}}}"><span class="glyphicon glyphicon-th-list"></span>  Back to Index</a>
 
-		@if(Auth::check())
+		@if(Auth::id() == $post->user_id)
 		<a class="btn btn-success" href="{{{ action('PostsController@edit', $post->id) }}}"><span class="glyphicon glyphicon-pencil"></span> Edit Post</a>
+		@endif
 	</div>
-@endif
 
 @stop
 
