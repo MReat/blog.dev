@@ -7,10 +7,11 @@
 
 
 @section('content')
+	<div class="container col-md-6 col-md-offset-2">
+		<h1 id='summary_name'>Matthew J. Reat</h1>
+	</div>
 
-<h1 id='summary_name'>Matthew J. Reat</h1>
-	<div class='col-md-2'></div>
-	<div class='container well col-md-9'>
+	<div class='container well col-md-8 col-md-offset-2 text-justify'>
  		<h2>Professional Summary</h2>
  			<p>
  				I possess over 19 years of healthcare experience, holding executive positions in both hospitals and ambulatory settings, while consistently receiving progressive recognition and promotion.  Experience includes Not-for-Profit, For-Profit, Academic, and Public Healthcare Delivery organizations, providing the following qualifications: 

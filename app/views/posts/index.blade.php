@@ -22,8 +22,13 @@ Posts
 	</div>
 	
 	@foreach ($posts as $post)
-		<div class="container well col-md-9">
+		<div class="container well col-md-9 col-md-offset-1">
 			<h3><strong>Post Title:  </strong>{{{ $post->title }}}</h3>
+
+			@if (isset($post->image))
+				<img class="responsive" src="/{{{ $post->image }}}"/>
+			@endif
+
 			<p><strong>Authored by: </strong>{{{ $post->user->first_name}}} {{{ $post->user->last_name}}}</p>
 
 			<p><strong>Date created on: </strong>{{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>

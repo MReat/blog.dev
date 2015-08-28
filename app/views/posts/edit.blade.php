@@ -6,10 +6,10 @@ Posts
 @stop
 
 @section('content')
-	<div class="col-md-2"></div>
-	<div class="container well col-md-8">
+	
+	<div class="container well col-md-8 col-md-offset-2">
 		<h1>Posts Input</h1>
-		{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
+		{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT', 'files' => true)) }}
 			
 			<div class="form-group @if($errors->has('title')) has-error @endif">
 				{{ Form::label('title', 'Title') }}
@@ -21,15 +21,27 @@ Posts
 				{{ Form::textarea('body', null, ['class' => 'form-control']) }}
 			</div>
 
+			<div class="form-group">
+
+					{{ Form::file('image', array('value' => $post->image)) }}
+{{-- 				@if(isset($post->image))
+				@else
+					{{ Form::file('image') }}
+				@endif
+ --}}			
+			</div>
+
 			<div class="form-group">	
 				<button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Submit</button>
 				
-				<a class="btn btn-info" type='submit' href="{{{ action('PostsController@show', $post->id)}}}">
+				<a class="btn btn-info" type='submit' href="{{{ action('PostsController@show', $post->id) }}}">
 					<span class="glyphicon glyphicon-ban-circle"></span> Cancel</a> 
 
 				<a class="btn btn-danger" type="submit" id="delete">
 					<span class="glyphicon glyphicon-remove"></span>  Delete</a>
 			</div>
+
+
 			
 		{{ Form::close() }}
 

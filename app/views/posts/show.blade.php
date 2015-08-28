@@ -7,10 +7,15 @@ Posts
 
 
 @section('content')
-<div class="col-md-2"></div>
-	<div class="container well col-md-8">
+	<div class="container well col-md-8 col-md-offset-2">
+		
 		<h2>{{{ $post->title }}}</h2>
-		<p>{{{ $post->user->first_name}}}</p>
+		<p>{{{ $post->user->first_name }}}</p>
+		
+		@if (isset($post->image))
+			<img class="responsive" src="/{{ $post->image }}"/>
+		@endif
+
 		<p>Date created on: {{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
 
 		@if (isset($post->date_updated))
@@ -24,6 +29,7 @@ Posts
 		@if(Auth::id() == $post->user_id)
 		<a class="btn btn-success" href="{{{ action('PostsController@edit', $post->id) }}}"><span class="glyphicon glyphicon-pencil"></span> Edit Post</a>
 		@endif
+	
 	</div>
 
 @stop

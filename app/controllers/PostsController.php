@@ -35,7 +35,7 @@ if (Input::has('search')){
 	    		$q->where('last_name', 'LIKE', '%' . $search . '%');
 	    	});
 	    }
-		$posts = $query->orderBy('created_at', 'desc')->paginate(4);
+		$posts = $query->orderBy('created_at', 'desc')->paginate(10);
 		
 		foreach($posts as $post){
 			if(strlen($post->body) > 75) {
@@ -69,6 +69,7 @@ if (Input::has('search')){
 			return Redirect::back()->withInput();
 		}
 
+
 		// create the validator
 	    $validator = Validator::make(Input::all(), Post::$rules);
 
@@ -81,10 +82,18 @@ if (Input::has('search')){
 	        return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
 	        // validation succeeded, create and save the post
+
+	    
+			$uploads_directory = 'img/uploads/';
+			
 			$post = new Post();
 			$post->title =  Input::get('title');
 			$post->body =  Input::get('body');
 			$post->user_id = Auth::id();
+			if(isset($post->image)){
+				$filename = Input::file('image')->getClientOriginalName();
+				$post->image = Input::file('image')->move($uploads_directory, $filename);
+			}
 			$post->save();
 
 			Log::info('Post successfully saved.', Input::all());
@@ -147,6 +156,7 @@ if (Input::has('search')){
 		// create the validator
 	    $validator = Validator::make(Input::all(), Post::$rules);
 
+		
 
 	    // attempt validation
 	    if ($validator->fails()) {
@@ -168,8 +178,17 @@ if (Input::has('search')){
 				App::abort(404);
 			}
 			
+
+			$uploads_directory = 'img/uploads/';
+
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
+
+			if(Input::hasFile('image')) {
+				$filename = Input::file('image')->getClientOriginalName();	
+				$post->image = Input::file('image')->move($uploads_directory, $filename);
+			}
+			
 			$post->save();
 		
 			return Redirect::action('PostsController@index', array($id));
