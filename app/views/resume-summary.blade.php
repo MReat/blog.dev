@@ -16,7 +16,7 @@
  			<p>
  				I possess over 19 years of healthcare experience, holding executive positions in both hospitals and ambulatory settings, while consistently receiving progressive recognition and promotion.  Experience includes Not-for-Profit, For-Profit, Academic, and Public Healthcare Delivery organizations, providing the following qualifications: 
 			</p>
-				<ul>
+				<ul class=" col-md-10 col-md-offset-1 text-justify">
 					<li>
 						Strong leadership skills demonstrated through executive management, combining strategic planning with operational implementation and reporting
 					</li>
@@ -26,11 +26,11 @@
 					</li>
 					
 					<li>
-						Comprehensive analytical abilities demonstrated through development, creation, & utilization of Revenue Cycle diagnostic and reporting methodology & tools
+						Comprehensive analytical abilities demonstrated through development, creation, and deployment of Revenue Cycle diagnostic and reporting solutions
 					</li>
 					
 					<li>
-						Thorough financial management skills displayed through developing and maintaining operational and capital budgets as well as directing special projects to meet established goals
+						Thorough financial management skills displayed through developing and maintaining operational and capital budgets, as well as directing special projects to meet established goals
 					</li>
 						
 				

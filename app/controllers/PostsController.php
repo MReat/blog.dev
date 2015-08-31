@@ -6,7 +6,13 @@ class PostsController extends \BaseController {
 	public function __construct ()
 	{
 		parent::__construct();
-		$this->beforeFilter('auth', array('except' => array('index', 'show')));
+
+		// Filter for isOwnerAdmin
+		$this->beforeFilter('isOwnerAdmin', array('only' => array('edit', 'update', 'destroy')));
+
+
+		// Regular Auth filter
+		$this->beforeFilter('auth',  array('only' => array('create', 'store')));
 	}
 
 	/**
@@ -85,15 +91,13 @@ if (Input::has('search')){
 
 	    
 			$uploads_directory = 'img/uploads/';
+			$filename = Input::file('image')->getClientOriginalName();
 			
 			$post = new Post();
 			$post->title =  Input::get('title');
 			$post->body =  Input::get('body');
 			$post->user_id = Auth::id();
-			if(isset($post->image)){
-				$filename = Input::file('image')->getClientOriginalName();
-				$post->image = Input::file('image')->move($uploads_directory, $filename);
-			}
+			$post->image = Input::file('image')->move($uploads_directory, $filename);
 			$post->save();
 
 			Log::info('Post successfully saved.', Input::all());

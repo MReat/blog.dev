@@ -8,26 +8,26 @@ class UsersTableSeeder extends Seeder
 	{
 
 		$this->createEnvUser();
-		$this->createFakeUsers();
+		// $this->createFakeUsers();
 		
 	}
 
 
-	protected function createFakeUsers()
-	{
-		$faker = Faker::create();
+	// protected function createFakeUsers()
+	// {
+	// 	$faker = Faker::create();
 
-		for($i = 0; $i <30; $i++){
-			$user = new User();
-			$user->first_name = $faker->firstName;
-			$user->last_name = $faker->lastName;
-			$user->email = $faker->email;
-			$user->password = $faker->password;
-			$user->save();
+	// 	for($i = 0; $i <30; $i++){
+	// 		$user = new User();
+	// 		$user->first_name = $faker->firstName;
+	// 		$user->last_name = $faker->lastName;
+	// 		$user->email = $faker->email;
+	// 		$user->password = $faker->password;
+	// 		$user->save();
 
-		}
+	// 	}
 
-	}
+	// }
 
 	protected function createEnvUser()
 	{
@@ -36,6 +36,7 @@ class UsersTableSeeder extends Seeder
 		$user->last_name = $_ENV['USER_LAST_NAME'];
 		$user->email = $_ENV['USER_EMAIL'];
 		$user->password = $_ENV['USER_PASS'];
+		$user->role = $_ENV['USER_ROLE'];
 		$user->save();
 	}
 

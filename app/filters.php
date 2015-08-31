@@ -48,6 +48,19 @@ Route::filter('auth', function()
 	}
 });
 
+Route::filter('isOwnerAdmin', function($route) { 
+	$id = $route->getParameter('posts');
+	
+	$post = Post::find($id);
+	$user_id = $post->user_id;
+
+	if(Auth::id() != $user_id && Auth::user()->role != 'admin'){
+
+		return Redirect::action('PostsController@index');
+	}
+
+});
+
 
 Route::filter('auth.basic', function()
 {

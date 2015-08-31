@@ -18,8 +18,7 @@ Posts
 
 			<div class="form-group @if($errors->has('body')) has-error @endif">
 				<label class="control-label" name="body" for="body">Body</label>
-				<textarea type="text" class="form-control" name="body" placeholder="Add Content Here...">
-					{{{ Input::old('body') }}}</textarea>
+				<textarea type="text" class="form-control" name="body" placeholder="Add Content Here...">{{{ Input::old('body') }}}</textarea>
 			</div>
 
 			<div class="form-group">
