@@ -7,7 +7,7 @@ Create User
 
 
 @section('content')
-	<div class="container well col-md-8">
+	<div class="container well col-md-6 col-md-offset-3">
 		<h1>Login</h1>
 		{{ Form::open(array('action' => array('HomeController@doLogin'))) }}
 	
@@ -22,9 +22,10 @@ Create User
 			</div>
 
 			<div class="form-group">	
-				<button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Submit</button>
+				<button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Enter</button>
 				<a class="btn btn-info" type='submit' href="{{{ action('PostsController@index')}}}">
-					<span class="glyphicon glyphicon-ban-circle"></span> Cancel</a> 
+					<span class="glyphicon glyphicon-ban-circle"></span> Cancel</a>
+				<a class="btn btn-warning" type="submit" href="{{{ action('HomeController@createUser')}}}"><span class="glyphicon glyphicon-user"></span> Create User</a>
 			</div>
 			
 		{{ Form::close() }}

@@ -12,7 +12,7 @@ class PostsController extends \BaseController {
 
 
 		// Regular Auth filter
-		$this->beforeFilter('auth',  array('only' => array('create', 'store')));
+		$this->beforeFilter('auth',  array('only' => array('create', 'store', 'show'))); // added show to the list
 	}
 
 	/**

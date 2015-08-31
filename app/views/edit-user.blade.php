@@ -48,7 +48,7 @@ Update User
 			"use strict";
 			$('#delete').on('click', function() {
 				
-				var onConfirm = confirm('Are you sure you want to delete this post?');
+				var onConfirm = confirm('Are you sure you want to delete this user?');
 
 				if(onConfirm) {
 					$('#formDelete').submit();

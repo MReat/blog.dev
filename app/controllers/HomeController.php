@@ -94,15 +94,13 @@ class HomeController extends BaseController {
 	{
 		$email = Input::get('email');
 		$password = Input::get('password');
-		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
+		if (Auth::attempt(array('email' => $email, 'password' => $password), true)) {
+			Log::info('Login Successful - ', array('Login for = ' => Input::get('email')));
 		    return Redirect::intended('/posts');
 		  
 		} else {
-			//Display session flash
-			//log email that tried to authenticate
-
-			Log::info('Login Successful on : ', Input::get('email'));
-
+			
+			Log::error('Login Error on : ', Input::get('email'));
 			Session::flash('errorMessage', 'Problem with email and/or password. Please resubmit');
 
 		    return Redirect::action('HomeController@login');
@@ -112,7 +110,7 @@ class HomeController extends BaseController {
 	public function doLogout()
 	{
 		Auth::logout();
-		//Display session flash
+
 		Session::flash('successMessage', 'Logout successfully completed');
 
 		return Redirect::to('/posts');
@@ -152,10 +150,12 @@ class HomeController extends BaseController {
 	    
 	}
 
-	public function destroyUser($id)
+	public function destroyUser()
 	{
+		$id = Auth::id();
+
 		User::find($id)->delete();
-		Log::info(Input::all());
+		Log::info('User Deleted with attached information: ', Input::all());
 		return Redirect::action('HomeController@login');
 	}
 
