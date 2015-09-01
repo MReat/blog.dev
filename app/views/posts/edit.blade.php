@@ -18,7 +18,17 @@ Posts
 
 			<div class="form-group @if($errors->has('title')) has-error @endif">
 				{{ Form::label('body', 'Body') }}
-				{{ Form::textarea('body', null, ['class' => 'form-control']) }}
+				<div class="wmd-panel">
+	                <div id="wmd-button-bar"></div>
+                	@if(!empty($post->body))
+		                <textarea class="wmd-input form-control" name="body" cols="50" rows="10" id="wmd-input">{{{$post->body}}}</textarea>
+	                @else
+		                 <textarea class="wmd-input form-control" name="body" cols="50" rows="10" id="wmd-input"></textarea>
+                	@endif
+		            </div>
+	            <label>Preview:</label>
+	            <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
+	            <br/>
 			</div>
 
 			<div class="form-group">
@@ -67,8 +77,17 @@ Posts
 
 			})
 		})();
-	
 	</script>
-
+	
+	<script type="text/javascript">
+	    (function () {
+	        
+	        var converter = new Markdown.Converter();
+	        
+	        var editor = new Markdown.Editor(converter);
+	        
+	        editor.run();
+	    })();
+	</script>
 @stop
 
