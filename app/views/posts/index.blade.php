@@ -10,7 +10,7 @@ Posts
 
 @section('content')
 	<div class="form-group">
-		<h2>Blog Posts</h2>
+		<h2 id="blog_post_title">Blog Posts</h2>
 		
 		@if(Auth::check()) 
 		<a href="{{{ action('PostsController@create') }}}" class="btn btn-success">

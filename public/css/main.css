@@ -16,3 +16,19 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.container {
+	color: black;
+}
+
+.well {
+	background-color: #B2B2B2;
+}
+
+#summary_name {
+	color: #fefefe;
+}
+
+#blog_post_title {	
+	color: #fefefe;
+}

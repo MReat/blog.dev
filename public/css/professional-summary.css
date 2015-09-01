@@ -1,0 +1,24 @@
+#resume.section {
+	background-color: #333333;
+}
+
+#resume h2, h3, h4 {
+	color: white;
+}
+
+a {
+	background-color: #191919;
+	border-radius: 10%;
+}
+
+#subtitle {
+color: #e0e0e0;
+}
+
+p, li {
+	color: #e0e0e0;
+}
+
+span.underline {
+	text-decoration: underline;
+}
