@@ -32,3 +32,14 @@ img {
 #blog_post_title {	
 	color: #fefefe;
 }
+
+#wmd-button-bar{
+    margin: 10px;
+}
+
+#wmd-button-bar>#wmd-button-row>.btn-group>.btn{
+    margin: 5px;
+    border-radius: 5px;
+    border: solid;
+    border-style: outset;
+}
