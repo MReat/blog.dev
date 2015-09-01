@@ -75,7 +75,7 @@
 
                             <div class="resume-item">
                                 <div class="resume-year">
-                                    <span class="resume-year">9/2013 - 5/2015</span>
+                                    <span class="resume-year">2013 - 2015</span>
                                 </div>
                                 <!-- //.resume-year -->
 
@@ -121,7 +121,7 @@
 
                             <div class="resume-item">
                                 <div class="resume-year">
-                                    <span class="resume-year">8/2012 - 9/2013</span>
+                                    <span class="resume-year">2012 - 2013</span>
                                 </div>
                                 <!-- //.resume-year -->
 
@@ -165,7 +165,7 @@
 
                             <div class="resume-item">
                                 <div class="resume-year">
-                                    <span class="resume-year">7/2011 - 7/2012</span>
+                                    <span class="resume-year">2011 - 2012</span>
                                 </div>
                                 <!-- //.resume-year -->
 
@@ -209,7 +209,7 @@
                             
                             <div class="resume-item">
                                 <div class="resume-year">
-                                    <span class="resume-year">3/2008 - 7/2012</span>
+                                    <span class="resume-year">2008 - 2012</span>
                                 </div>
 	                                <!-- //.resume-year -->
 
@@ -252,7 +252,7 @@
                             <!-- //.resume-item -->
                             <div class="resume-item">
                                 <div class="resume-year">
-                                    <span class="resume-year">7/2007 - 3/2008</span>
+                                    <span class="resume-year">2007 - 2008</span>
                                 </div>
 	                                <!-- //.resume-year -->
 
@@ -283,6 +283,7 @@
 	                                                	<li>Interim leadership as Executive Director of Revenue Cycle (Patient Access and Patient Financial Services) for a sole-community provider (Mid-West)</li>
 	                                                	<li>Performed full revenue cycle assessment, with associated findings and recommendations</li>
 	                                                	<li>Conducted oversight of performance improvement development and delivery, based on findings and recommendations</li>
+	                                                	<li>Achieved 25% increase in cash flow during tenure as executive and consultant</li>
 	                                                </ul>
 	                                            </p>
 	                                        </div>
@@ -294,14 +295,52 @@
                             </div>
                             <!-- //.resume-item -->
 
-                                                        <div class="resume-item">
+                            <div class="resume-item">
                                 <div class="resume-year">
-                                    <span class="resume-year">7/2007 - 3/2008</span>
+                                    <span class="resume-year">2006 - 2007</span>
                                 </div>
 	                                <!-- //.resume-year -->
 
                                 <div class="resume-btn">
                                     <a href="#work7" class="collapsed" data-toggle="collapse" data-parent="#work" aria-expanded="false"></a>
+                                </div>
+	                                <!-- //.resume-btn -->
+
+	                                <div class="panel">
+	                                    <div class="panel-heading">
+	                                        <div class="panel-title">
+	                                            <h4 class="resume-title">Client Executive & Solutions Consultant - Search America</h4>
+	                                        </div>
+	                                        <!-- //.panel-title -->
+		                                </div>
+	                                    <!-- //.panel-heading -->
+
+	                                    <div id="work7" class="panel-collapse collapse" aria-expanded="false">
+	                                        <div class="panel-body">
+	                                            <p>
+	                                                <span class="underline">Responsibilities:</span>
+	                                                <br>
+	                                                Provided advisory services regarding utilization of Search America's propensity to pay solution suite, enabling higher payment capture for the client, while increasing usage of the application for Search America.
+	                                                <br>
+	                                               
+	                                            </p>
+	                                        </div>
+	                                        <!-- //.panel-body -->
+	                                    </div>
+	                                    <!-- //.panel-collapse -->
+	                                </div>
+                                <!-- //.panel -->
+                            </div>
+                            <!-- //.resume-item -->
+                        
+                            <div class="resume-item">
+                                <div class="resume-year">
+                                    <span class="resume-year">2006</span>
+                                </div>
+	                                <!-- //.resume-year -->
+
+                                <div class="resume-btn">
+                                    <a href="#work8" class="collapsed" data-toggle="collapse" data-parent="#work" aria-expanded="false"></a>
                                 </div>
 	                                <!-- //.resume-btn -->
 
@@ -314,20 +353,14 @@
 		                                </div>
 	                                    <!-- //.panel-heading -->
 
-	                                    <div id="work7" class="panel-collapse collapse" aria-expanded="false">
+	                                    <div id="work8" class="panel-collapse collapse" aria-expanded="false">
 	                                        <div class="panel-body">
 	                                            <p>
 	                                                <span class="underline">Responsibilities:</span>
 	                                                <br>
-	                                                Delivery of revenue cycle assessment and operational improvement services for patient access and patient financial services
+	                                                Delivered interim management and advisory services for patient access operations at an academic pediatric hospital (South-West).
 	                                                <br>
-	                                                <br>
-	                                                <span class="underline">Accomplishments include:</span>
-	                                                <ul>
-	                                                	<li>Interim leadership as Executive Director of Revenue Cycle (Patient Access and Patient Financial Services) for a sole-community provider (Mid-West)</li>
-	                                                	<li>Performed full revenue cycle assessment, with associated findings and recommendations</li>
-	                                                	<li>Conducted oversight of performance improvement development and delivery, based on findings and recommendations</li>
-	                                                </ul>
+	                                               
 	                                            </p>
 	                                        </div>
 	                                        <!-- //.panel-body -->
@@ -337,6 +370,235 @@
                                 <!-- //.panel -->
                             </div>
                             <!-- //.resume-item -->
+
+                            <div class="resume-item">
+                                <div class="resume-year">
+                                    <span class="resume-year">2003 - 2005</span>
+                                </div>
+	                                <!-- //.resume-year -->
+
+                                <div class="resume-btn">
+                                    <a href="#work9" class="collapsed" data-toggle="collapse" data-parent="#work" aria-expanded="false"></a>
+                                </div>
+	                                <!-- //.resume-btn -->
+
+	                                <div class="panel">
+	                                    <div class="panel-heading">
+	                                        <div class="panel-title">
+	                                            <h4 class="resume-title">Manager & Senior Consultant - First Consulting Group (FCG)</h4>
+	                                        </div>
+	                                        <!-- //.panel-title -->
+		                                </div>
+	                                    <!-- //.panel-heading -->
+
+	                                    <div id="work9" class="panel-collapse collapse" aria-expanded="false">
+	                                        <div class="panel-body">
+	                                            <p>
+	                                                <span class="underline">Responsibilities:</span>
+	                                                <br>
+	                                                Conducted comprehensive assessments and delivered enhanced process improvement services for revenue cycle operations.  In addition, interim management services were provided for revenue cycle functions.  The combination of these services enabled client-partners to realize over $125 million in improved cash flow.
+	                                                <br>
+	                                               
+	                                            </p>
+	                                        </div>
+	                                        <!-- //.panel-body -->
+	                                    </div>
+	                                    <!-- //.panel-collapse -->
+	                                </div>
+                                <!-- //.panel -->
+                            </div>
+                            <!-- //.resume-item -->
+
+                            <div class="resume-item">
+                                <div class="resume-year">
+                                    <span class="resume-year">2003</span>
+                                </div>
+	                                <!-- //.resume-year -->
+
+                                <div class="resume-btn">
+                                    <a href="#work10" class="collapsed" data-toggle="collapse" data-parent="#work" aria-expanded="false"></a>
+                                </div>
+	                                <!-- //.resume-btn -->
+
+	                                <div class="panel">
+	                                    <div class="panel-heading">
+	                                        <div class="panel-title">
+	                                            <h4 class="resume-title">Independent Contractor - Revenue Advantage</h4>
+	                                        </div>
+	                                        <!-- //.panel-title -->
+		                                </div>
+	                                    <!-- //.panel-heading -->
+
+	                                    <div id="work10" class="panel-collapse collapse" aria-expanded="false">
+	                                        <div class="panel-body">
+	                                            <p>
+	                                                <span class="underline">Responsibilities:</span>
+	                                                <br>
+	                                                Supplied revenue cycle advisory services, as well as business development activities for the Revenue Advantage telephonic collection solution.
+	                                                <br>
+	                                               
+	                                            </p>
+	                                        </div>
+	                                        <!-- //.panel-body -->
+	                                    </div>
+	                                    <!-- //.panel-collapse -->
+	                                </div>
+                                <!-- //.panel -->
+                            </div>
+                            <!-- //.resume-item -->
+                                                    
+                            <div class="resume-item">
+                                <div class="resume-year">
+                                    <span class="resume-year">2000 - 2003</span>
+                                </div>
+	                                <!-- //.resume-year -->
+
+                                <div class="resume-btn">
+                                    <a href="#work11" class="collapsed" data-toggle="collapse" data-parent="#work" aria-expanded="false"></a>
+                                </div>
+	                                <!-- //.resume-btn -->
+
+	                                <div class="panel">
+	                                    <div class="panel-heading">
+	                                        <div class="panel-title">
+	                                            <h4 class="resume-title">Senior Consultant - Zimmerman and Associates</h4>
+	                                        </div>
+	                                        <!-- //.panel-title -->
+		                                </div>
+	                                    <!-- //.panel-heading -->
+
+	                                    <div id="work11" class="panel-collapse collapse" aria-expanded="false">
+	                                        <div class="panel-body">
+	                                            <p>
+	                                                <span class="underline">Responsibilities:</span>
+	                                                <br>
+	                                                Provided revenue cycle advisory services for ambulatory and tertiary healthcare providers, including best-practice operational enhancement, cash acceleration, and interim management.  Client-partners realized over $100 million in cash improvement and associated financial performance.
+	                                                <br>
+	                                               
+	                                            </p>
+	                                        </div>
+	                                        <!-- //.panel-body -->
+	                                    </div>
+	                                    <!-- //.panel-collapse -->
+	                                </div>
+                                <!-- //.panel -->
+                            </div>
+                            <!-- //.resume-item -->
+                                                    
+                            <div class="resume-item">
+                                <div class="resume-year">
+                                    <span class="resume-year">1999 - 2000</span>
+                                </div>
+	                                <!-- //.resume-year -->
+
+                                <div class="resume-btn">
+                                    <a href="#work12" class="collapsed" data-toggle="collapse" data-parent="#work" aria-expanded="false"></a>
+                                </div>
+	                                <!-- //.resume-btn -->
+
+	                                <div class="panel">
+	                                    <div class="panel-heading">
+	                                        <div class="panel-title">
+	                                            <h4 class="resume-title">Professional Representative - Merck</h4>
+	                                        </div>
+	                                        <!-- //.panel-title -->
+		                                </div>
+	                                    <!-- //.panel-heading -->
+
+	                                    <div id="work12" class="panel-collapse collapse" aria-expanded="false">
+	                                        <div class="panel-body">
+	                                            <p>
+	                                                <span class="underline">Responsibilities:</span>
+	                                                <br>
+	                                                Supplied pharmaceutical marketing and advisory services for 5 primary products.  Outcomes from these efforts relsulting in an increase of over 121% to planned sales volume targets.
+	                                                <br>
+	                                               
+	                                            </p>
+	                                        </div>
+	                                        <!-- //.panel-body -->
+	                                    </div>
+	                                    <!-- //.panel-collapse -->
+	                                </div>
+                                <!-- //.panel -->
+                            </div>
+                            <!-- //.resume-item -->
+                        
+                            <div class="resume-item">
+                                <div class="resume-year">
+                                    <span class="resume-year">1997 - 1999</span>
+                                </div>
+	                                <!-- //.resume-year -->
+
+                                <div class="resume-btn">
+                                    <a href="#work13" class="collapsed" data-toggle="collapse" data-parent="#work" aria-expanded="false"></a>
+                                </div>
+	                                <!-- //.resume-btn -->
+
+	                                <div class="panel">
+	                                    <div class="panel-heading">
+	                                        <div class="panel-title">
+	                                            <h4 class="resume-title">Practice Administrator - Covenant Healthcare</h4>
+	                                        </div>
+	                                        <!-- //.panel-title -->
+		                                </div>
+	                                    <!-- //.panel-heading -->
+
+	                                    <div id="work13" class="panel-collapse collapse" aria-expanded="false">
+	                                        <div class="panel-body">
+	                                            <p>
+	                                                <span class="underline">Responsibilities:</span>
+	                                                <br>
+	                                                Managed a 7 provider multi-specialty primary healthcare provider, including repsonsibility for: daily functional operations; provider relations; provider recruitment; overall regulatory compliance; and financial performance.
+	                                                <br>
+	                                               
+	                                            </p>
+	                                        </div>
+	                                        <!-- //.panel-body -->
+	                                    </div>
+	                                    <!-- //.panel-collapse -->
+	                                </div>
+                                <!-- //.panel -->
+                            </div>
+                            <!-- //.resume-item -->
+
+                            <div class="resume-item">
+                                <div class="resume-year">
+                                    <span class="resume-year">1996 - 1997</span>
+                                </div>
+	                                <!-- //.resume-year -->
+
+                                <div class="resume-btn">
+                                    <a href="#work14" class="collapsed" data-toggle="collapse" data-parent="#work" aria-expanded="false"></a>
+                                </div>
+	                                <!-- //.resume-btn -->
+
+	                                <div class="panel">
+	                                    <div class="panel-heading">
+	                                        <div class="panel-title">
+	                                            <h4 class="resume-title">Administrator / CEO - DeBaca General Hospital</h4>
+	                                        </div>
+	                                        <!-- //.panel-title -->
+		                                </div>
+	                                    <!-- //.panel-heading -->
+
+	                                    <div id="work14" class="panel-collapse collapse" aria-expanded="false">
+	                                        <div class="panel-body">
+	                                            <p>
+	                                                <span class="underline">Responsibilities:</span>
+	                                                <br>
+	                                                Managed a 21 bed sole-community hospital and primary care clinic.  Overall responsiblities included executive leadership relations (board of directors and county commissioners), daily operations, financial performance, provider management, and oversight of over 50 employees.
+	                                                <br>
+	                                               
+	                                            </p>
+	                                        </div>
+	                                        <!-- //.panel-body -->
+	                                    </div>
+	                                    <!-- //.panel-collapse -->
+	                                </div>
+                                <!-- //.panel -->
+                            </div>
+                            <!-- //.resume-item -->
+
                         </div>
                         <!-- //.panel-group -->
                     </div>
@@ -348,7 +610,7 @@
                 <div class="row education">
                     <div class="col-md-10 col-md-offset-1">
                         <h3>
-                            My Education
+                            My Professional Education
                             <br>
                             1988 - 2015
                         </h3>

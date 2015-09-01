@@ -1765,8 +1765,8 @@ button.mfp-arrow:active {
   left: 150px;
   width: 40px;
   height: 40px;
-  background-color: #2e2e2e;
-  border-radius: 4px;
+  background-color: #191919;
+  border-radius: 10%;
 }
 
 @media (max-width: 767px) {
@@ -1799,6 +1799,7 @@ button.mfp-arrow:active {
   font-size: 30px;
   font-weight: 700;
   text-align: center;
+
 }
 
 .panel-group.resume .resume-item .resume-btn > a.collapsed:before {
