@@ -130,6 +130,9 @@ if (Input::has('search')){
 		if(strlen($post->body) > 100) {
 			$post->shortString = substr($post->body, 0, 25) . "...";
 		}
+			$body = $post->body;
+			$Parsedown = new Parsedown();
+			$post->body = $Parsedown->text($body);
 
 		return View::make('posts.show')->with('post', $post);
 	

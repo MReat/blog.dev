@@ -22,7 +22,7 @@ Posts
 		<p>Update on: {{{ $post->updated_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
 		@endif
 
-		<p>{{{$post->body}}}</p>
+		<p>{{$post->body}}</p>
 
 		<a class="btn btn-info" href="{{{ action('PostsController@index')}}}"><span class="glyphicon glyphicon-th-list"></span>  Back to Index</a>
 

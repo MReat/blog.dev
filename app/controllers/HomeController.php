@@ -159,22 +159,19 @@ class HomeController extends BaseController {
 		return Redirect::action('HomeController@login');
 	}
 
-	// public function showResume()
+	// public function showCalculator()
 	// {
-	// 	return View::make('resume');
+	// 	return View::make('calculator');
 	// }
 	
 	// public function showSimonSays()
 	// {
 	// 	return View::make('simonsays');
 	// }
+	
 	// public function showWhackAMole()
 	// {
 	// 	return View::make('whackamole');
 	// }	
-	// public function showCalculator()
-	// {
-	// 	return View::make('calculator');
-	// }
 
 }
