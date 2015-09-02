@@ -40,4 +40,12 @@ img {
   border: solid;
   border-style: outset; }
 
+#summary_name {
+  text-align: center; }
+
+#professional_summary {
+  font-family: Raleway, sans-serif;
+  text-align: center;
+  font-weight: bold; }
+
 /*# sourceMappingURL=main.css.map */

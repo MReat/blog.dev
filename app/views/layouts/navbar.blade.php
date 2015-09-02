@@ -1,7 +1,6 @@
 @section('navbar')	
 	<nav role="navigation" class="navbar navbar-inverse navbar-static-top">
-	    <div class="container">
-	        <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="container-fluid">
 	        <div class="navbar-header">
 	            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 	                <span class="sr-only">Toggle navigation</span>
@@ -11,7 +10,7 @@
 	            </button>
 	            <a href="/" class="navbar-brand">Matthew J Reat</a>
 	        </div>
-	        <!-- Collection of nav links and other content for toggling -->
+	       
 	        <div id="navbar" class="navbar-collapse collapse">
 	            <ul class="nav navbar-nav">
 	                <li><a href="/summary">Professional Summary</a></li>
@@ -21,7 +20,6 @@
                 </ul>
 
 		        <ul class="nav navbar-nav navbar-right">
-                	<li><a href="#"></a></li>
 	                <li class="dropdown">
                 	@if (Auth::check())
 		                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello {{{Auth::user()->first_name}}}<span class="caret"></span></a>

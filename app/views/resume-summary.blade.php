@@ -7,16 +7,16 @@
 
 
 @section('content')
-	<div class="container col-md-6 col-md-offset-2">
+	{{-- <div class="container col-md-6 col-md-offset-2">
 		<h1 id='summary_name'>Matthew J. Reat</h1>
 	</div>
-
+ --}}
 	<div class='container well col-md-8 col-md-offset-2 text-justify'>
- 		<h2>Professional Summary</h2>
+ 		<h2 id="professional_summary">Professional Summary</h2>
  			<p>
  				I possess over 19 years of healthcare experience, holding executive positions in both hospitals and ambulatory settings, while consistently receiving progressive recognition and promotion.  Experience includes Not-for-Profit, For-Profit, Academic, and Public Healthcare Delivery organizations, providing the following qualifications: 
 			</p>
-				<ul class=" col-md-10 col-md-offset-1 text-justify">
+				<ul class="col-md-10 col-md-offset-1 text-justify">
 					<li>
 						Strong leadership skills demonstrated through executive management, combining strategic planning with operational implementation and reporting
 					</li>
