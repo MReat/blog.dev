@@ -49,7 +49,7 @@
 <script src="/js/Markdown.Editor.js"></script>
 
 
-	@yield('script')
+@yield('script')
 
 </body>
 </html>

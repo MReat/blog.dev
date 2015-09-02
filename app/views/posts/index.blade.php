@@ -9,17 +9,17 @@ Posts
 
 
 @section('content')
-	<div class="form-group">
-		<h2 id="blog_post_title">Blog Posts</h2>
-		
-		@if(Auth::check()) 
-		<a href="{{{ action('PostsController@create') }}}" class="btn btn-success">
-			<span class="glyphicon glyphicon-pencil"></span> Create a Post</a>
-		@endif
-		
-		<a href="{{{ action('PostsController@index') }}}" class="btn btn-info">
-			<span class="glyphicon glyphicon-th-list"></span> Return to Index</a>
-	</div>
+	<h2 id="blog_post_title">Blog Posts</h2>
+		<div class="form-group">
+			
+			@if(Auth::check()) 
+			<a href="{{{ action('PostsController@create') }}}" class="btn btn-success">
+				<span class="glyphicon glyphicon-pencil"></span> Create a Post</a>
+			@endif
+			
+			<a href="{{{ action('PostsController@index') }}}" class="btn btn-info">
+				<span class="glyphicon glyphicon-th-list"></span> Return to Index</a>
+		</div>
 	
 	@foreach ($posts as $post)
 		<div class="container well col-md-9 col-md-offset-1">
@@ -55,4 +55,25 @@ Posts
 	
 	</div>
 
+@stop
+
+@section('script')
+<script type="text/javascript">
+  
+// $(document).ready(function () {
+//     $('ul.nav > li').click(function (e) {
+//         $('ul.nav > li').removeClass('active');
+//         $(this).addClass('active');                
+//     });            
+// });
+
+var url = window.location;
+// Will only work if string in href matches with location
+$('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+
+// Will also work for relative and absolute hrefs
+$('ul.nav a').filter(function() {
+    return this.href == url;
+}).parent().addClass('active');
+</script>
 @stop

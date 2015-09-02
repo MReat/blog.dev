@@ -21,3 +21,15 @@
         </p>
 </div>
 @stop
+
+@section('script')
+<script type="text/javascript">
+  
+$(document).ready(function () {
+    $('ul.nav > li').click(function (e) {
+        $('ul.nav > li').removeClass('active');
+        $(this).addClass('active');                
+    });            
+});
+</script>
+@stop

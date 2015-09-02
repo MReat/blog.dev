@@ -10,14 +10,16 @@ h1 {
 }
 
 aside {
-	margin-top: 50px;
+	margin: 50px;
+	float: right;
 	height: 150px;
-	float: left;
+	width: 375px;
 	font-weight: bold;
 	border: solid black 5px;
 	border-radius: 25%;
 	padding: 25px 10px 30px 10px;
 	background-color: #f0f0f0;
+	display: block;
 }
 
 button {
@@ -32,6 +34,14 @@ button {
 	background-color: #66ff66;
 }
 
+#selector {
+	padding-left: 15px;
+	text-align: center;
+}
+
+#selector_slider {
+	padding-left: 30px;
+}
 
 #score {
 	width: 200px;
@@ -49,30 +59,31 @@ button {
 	opacity: .4;
 }
 
-.outerShell {
+/*.outerShell {
 	width: 540px;
 	height: 540px;
 	margin: auto;
 	border-radius: 100%;
 	background-color: black;
-}
+}*/
 
-.innerShell {
+#container {
 	width: 500px;
 	height: 500px;
-	padding-top: 25px;
-	margin: auto;
+	padding: 22px;
 	border-radius: 100%;
 	background-color: black;
-	position: relative;
+	border: solid black 3px;
+	float: left;
+
 }
 
 .box {
 	width:  220px;
 	height:  220px;
 	margin: 10px 15px 15px 10px;
+	border-collapse: collapse;
 	float: left;
-	position: relative;
 
 }
 
@@ -80,22 +91,26 @@ button {
 	border-radius: 100% 5% 25% 5%;
 	background-color: #00FF00;
 	float: left;
+	margin-top: 10px;
 }
 
 #red {
 	border-radius: 5% 100% 5% 25%;
 	background-color: #ff0000;
 	float: right;
+	margin-top: 10px;
 }
 
 #yellow {
 	border-radius: 5% 25% 5% 100%;
 	background-color: #FFFF00;
 	float: left;
+	margin-top: 15px;
 }
 
 #blue {
 	border-radius: 25% 5% 100% 5%;
 	background-color: #0000FF;
 	float: right;
+	margin-top: 15px;
 }

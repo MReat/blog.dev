@@ -29,4 +29,8 @@ Route::put('update_account', 'HomeController@updateUser');
 
 Route::delete('my_account', 'HomeController@destroyUser');
 
-// Route::get('calculator', 'HomeController@showCalculator')
+// Route::get('calculator', 'HomeController@showCalculator');
+
+// Route::get('calculator', 'HomeController@showSimpleSimon');
+
+// Route::get('calculator', 'HomeController@showWhackaBell');
