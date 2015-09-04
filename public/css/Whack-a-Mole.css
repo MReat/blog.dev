@@ -3,7 +3,7 @@ body {
 }
 
 aside {
-	float: left;
+	float: right;
 	border-radius: 20%;
 	background-color: #D1D1E0;
 	border: black solid 5px;
@@ -82,23 +82,28 @@ label {
 }
 
 #console {
-	width: 570px;
-	height: 575px;
-	background-color: #A3C8EC;
+	width: 550px;
+	height: 550px;
+	background-color: #383838;
+	padding-top: 40px !important;
+	padding-left: 35px;
 	margin: auto;
 	padding-top: 25px;
 	border-radius: 20%;
 	border: solid black 5px;
-	position: relative;
 	float: left;
 }
 
+#portfolio_return {
+	margin-left: 100px;
+}
+
 .container {
-	width: 500px;
-	height: 500px;
+	width: 1000px;
+	height: 600px;
 	margin: auto;
 	margin-top: 25px;
-	background-color: #A3C8EC;
+	background-color: #666666;
 	position: relative;
 }
 

@@ -34,6 +34,8 @@
 		</ul>
 	@endif
 
+	@yield('aside')
+	
 	<main class="container">
 	@yield('content')
 	</main>

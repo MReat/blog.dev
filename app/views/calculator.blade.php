@@ -1,14 +1,20 @@
-<html lang="en">
-<head>
-	<title>Calculator</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" alt="calculator" href="/css/calculator.css">
-</head>
-<body>
-	<h1>CALCULATOR</h1>
+@extends('layouts.master')
+@include('layouts.navbar')
+
+@section('style')
+<link rel="stylesheet" href="/css/calculator.css">
+@stop
+
+@section('title')
+Calculator
+@stop
+
+@section('aside')
+@stop
+
+@section('content')
 
 	<form>
-	<div class="container">
 		<div class="display">
 
 			<input type="text" name="box1" id="box1" value="" readonly></input>
@@ -51,13 +57,12 @@
 			<div class="row5">
 				<button  type="button"  id="btnEqual" value="=">=</button>
 			</div>
-
 		</div>
 	</form>
+	<a class="btn btn-default" href="{{{ action('HomeController@showPortfolio') }}}" id="portfolio_return"><span class="glyphicon glyphicon-briefcase"></span> Return to Portfolio</a>
+@stop
 
-	</div>
-
-	
+@section('script')	
 	<script type="text/javascript">
 	"use strict";
 
@@ -101,17 +106,10 @@
 		}
 		
 		if (beforeOperator){
-			if (this.value % 1 == 0) { // can this be done with typeof?
+			if (this.value % 1 == 0) { 
 				box1.value += this.innerHTML;
 			} else if (this.id == "decimal") {
 				box1.value += this.innerHTML;
-
-				// <-- looking to create code to allow decimal point to be entered 1 time -->
-				// if (box1.indexOf(".") >= 0) {
-				// 	console.log(box1.indexOf("."));
-				// 	this.value(".").removeEventListener('click', keyEntry, false);
-				// }
-
 
 			} else if (this.value == "+" || this.value == "-" || this.value == "*" || this.value == "/") {
 				operator.value = this.value;
@@ -139,8 +137,7 @@
 		keyEntry[i].addEventListener('click', boxValue, false); 
 	}	
 			
+</script>
+<script src="/js/jquery-1.11.3.js"></script>
+@stop
 
-	</script>
-
-</body>
-</html>

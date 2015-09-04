@@ -46,6 +46,24 @@ img {
 #professional_summary {
   font-family: Raleway, sans-serif;
   text-align: center;
+  margin: 15px;
   font-weight: bold; }
+
+/* css on portfolio*/
+.item_box {
+  border: solid white 5px;
+  border-style: outset;
+  background-color: #707070;
+  height: 250px;
+  color: white;
+  margin: 15px; }
+  .item_box h2 {
+    padding-top: 10px; }
+  .item_box img {
+    padding-top: 10px; }
+
+/* css on professional summary*/
+li .summary_info {
+  margin: 10px; }
 
 /*# sourceMappingURL=main.css.map */

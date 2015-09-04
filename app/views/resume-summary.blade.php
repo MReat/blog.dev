@@ -12,29 +12,29 @@
 	</div>
  --}}
 	<div class='container well col-md-8 col-md-offset-2 text-justify'>
- 		<h2 id="professional_summary">Professional Summary</h2>
- 			<p>
+ 		<h2 class="summary_info" id="professional_summary">Professional Summary</h2>
+ 			<p class="summary_info">
  				I possess over 19 years of healthcare experience, holding executive positions in both hospitals and ambulatory settings, while consistently receiving progressive recognition and promotion.  Experience includes Not-for-Profit, For-Profit, Academic, and Public Healthcare Delivery organizations, providing the following qualifications: 
 			</p>
 				<ul class="col-md-10 col-md-offset-1 text-justify">
-					<li>
+					<li class="summary_info">
 						Strong leadership skills demonstrated through executive management, combining strategic planning with operational implementation and reporting
 					</li>
 					
-					<li>
+					<li class="summary_info">
 						Well-developed organizational management skills exemplified through coordination of multidisciplinary functions within a healthcare environment
 					</li>
 					
-					<li>
+					<li class="summary_info">
 						Comprehensive analytical abilities demonstrated through development, creation, and deployment of Revenue Cycle diagnostic and reporting solutions
 					</li>
 					
-					<li>
+					<li class="summary_info">
 						Thorough financial management skills displayed through developing and maintaining operational and capital budgets, as well as directing special projects to meet established goals
 					</li>
 						
 				
-					<li>
+					<li class="summary_info">
 						Advanced healthcare revenue cycle understanding and management proven through realization of aggressive financial objectives
 					</li>
 				</ul>

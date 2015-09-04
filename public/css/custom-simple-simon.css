@@ -12,7 +12,7 @@ h1 {
 aside {
 	margin: 50px;
 	float: right;
-	height: 150px;
+	height: 280px;
 	width: 375px;
 	font-weight: bold;
 	border: solid black 5px;
@@ -39,10 +39,6 @@ button {
 	text-align: center;
 }
 
-#selector_slider {
-	padding-left: 30px;
-}
-
 #score {
 	width: 200px;
 	height: 75px;
@@ -55,17 +51,14 @@ button {
 	border-radius: 25%;
 }
 
+#portfolio_return {
+	margin-left: 100px;
+}
+
+
 .active {
 	opacity: .4;
 }
-
-/*.outerShell {
-	width: 540px;
-	height: 540px;
-	margin: auto;
-	border-radius: 100%;
-	background-color: black;
-}*/
 
 #container {
 	width: 500px;
@@ -75,12 +68,13 @@ button {
 	background-color: black;
 	border: solid black 3px;
 	float: left;
+	margin-left: 150px;
 
 }
 
 .box {
-	width:  220px;
-	height:  220px;
+	width:  200px;
+	height:  200px;
 	margin: 10px 15px 15px 10px;
 	border-collapse: collapse;
 	float: left;

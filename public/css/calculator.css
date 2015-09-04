@@ -12,15 +12,20 @@ h1 {
 
 .container {
 background-color: #3d4543;
-height: 440px;
-width: 420px;
+height: 520px;
+width: 480px;
 border-radius: 10px;
 position: relative;
 top: 20px;
+margin-top: 5px;
 margin-left: auto;
 margin-right: auto;
 border: solid white 3px;
 
+}
+
+#portfolio_return {
+	margin-left: 130px;
 }
 
 .display {
@@ -73,7 +78,7 @@ font-size: 1.5em;
 background-color: 244,244,244;
 text-align: center;
 height: 45px;
-width: 135px;
+width: 145px;
 margin: 5px;
 border: solid red 3px;
 border-radius: 10px;
@@ -98,7 +103,7 @@ font-size: 1.5em;
 background-color: 244,244,244;
 text-align: center;
 height: 45px;
-width: 135px;
+width: 145px;
 margin: 5px;
 border: solid red 3px;
 border-radius: 10px;
