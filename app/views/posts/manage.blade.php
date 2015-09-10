@@ -17,7 +17,7 @@
 				</div>
 
 			<div class="table-responsive">
-				<table class="table table-bordered table-striped">
+				<table class="table table-bordered" id="manage_blog_table">
 					<thead>
 						<th>Title</th>
 						<th>Author</th>
@@ -26,11 +26,11 @@
 					</thead>
 
 					<tbody>
-						<tr ng-repeat="post in posts">
+						<tr ng-repeat="p in posts">
 
-							<td><a href="/posts/@{{post.id}}"> @{{ post.title }} </a></td>
-							<td> @{{ post.user.first_name }} @{{ post.user.last_name }} </td>
-							<td> @{{ formatDate(post.created_at.date) | date: "longDate" }} </td>
+							<td><a href="/posts/@{{p.id}}"> @{{ p.title }} </a></td>
+							<td> @{{ p.user.first_name }} @{{ p.user.last_name }} </td>
+							<td> @{{ formatDate(p.created_at.date) | date: "longDate" }} </td>
 							<td>
 								<a class="btn btn-danger" ng-click="deletePost(post.id, index)">
 									<span class="glyphicon glyphicon-remove"></span> Delete</a> 

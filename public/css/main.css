@@ -66,4 +66,8 @@ img {
 ul .summary_info {
   margin: 10px; }
 
+/* css on manage blog*/
+#manage_blog_table {
+  background-color: white; }
+
 /*# sourceMappingURL=main.css.map */

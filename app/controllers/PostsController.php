@@ -102,7 +102,7 @@ if (Input::has('search')){
 			$post->title =  Input::get('title');
 			$post->body =  Input::get('body');
 			$post->user_id = Auth::id();
-			
+
 			if(Input::hasFile('image')) {
 				$filename = Input::file('image')->getClientOriginalName();	
 				$post->image = Input::file('image')->move($uploads_directory, $filename);
@@ -173,43 +173,49 @@ if (Input::has('search')){
 		// create the validator
 	    $validator = Validator::make(Input::all(), Post::$rules);
 
-		
-
 	    // attempt validation
 	    if ($validator->fails()) {
 	        // validation failed, redirect to the post create page with validation errors and old inputs
 	        return Redirect::back()->withInput()->withErrors($validator);
 	    
-	    } else {
-	        // validation succeeded, create and save the post
-			$post = Post::find($id);
-
-		    if(!$post) {
-
-		    	$message = "Post with id of $id is not found.";
-
-		    	Log::warning($message);
-			
-				Session::flash('errorMessage', "The post id of $id is not found");
-
-				App::abort(404);
-			}
-			
-
-			$uploads_directory = 'img/uploads/';
-
-			$post->title = Input::get('title');
-			$post->body = Input::get('body');
-
-			if(Input::hasFile('image')) {
-				$filename = Input::file('image')->getClientOriginalName();	
-				$post->image = Input::file('image')->move($uploads_directory, $filename);
-			}
-			
-			$post->save();
-		
-			return Redirect::action('PostsController@index', array($id));
 	    }
+	        // validation succeeded, create and save the post
+		$post = Post::find($id);
+
+	    if(!$post) {
+
+	    	$message = "Post with id of $id is not found.";
+
+	    	Log::warning($message);
+		
+			Session::flash('errorMessage', "The post id of $id is not found");
+
+			App::abort(404);
+		}
+			
+		$uploads_directory = 'img/uploads/';
+
+		$post->title = Input::get('title');
+		$post->body = Input::get('body');
+
+		if(Input::hasFile('image')) {
+			$filename = Input::file('image')->getClientOriginalName();	
+			$post->image = Input::file('image')->move($uploads_directory, $filename);
+		}
+		
+		$post->save();
+	
+
+        if (Request::wantsJson()) {
+	    	
+	        return Response::json(array("message" => "post edited"));
+
+        } else {
+
+	    	Session::flash('errorMessage', 'Error with edit occurred.');
+
+			return Redirect::action('PostsController@index', array($id));
+        }
 
 	}
 

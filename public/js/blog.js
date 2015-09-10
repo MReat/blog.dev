@@ -58,13 +58,13 @@
 
         $scope.editPost = function() {
 
-            $http.put('/posts/' + scope.post.id, {
+            $http.put('/posts/' + $scope.post.id, {
                 'title': $scope.post.title,
                 'body': $scope.post.body
 
-            }), then(function (response) {
+            }).then(function(response) {
 
-                $log.info("Edit Successful.");
+                $log.info("Edit from Manage Post Successful.");
                 $log.info(response);
                 $('#modal').modal('hide');
 
@@ -79,7 +79,7 @@
         $scope.formatDate = function(date) {
             var dateOut = new Date(date);
             return dateOut;
-        }
+        };
 
     }]);
 
