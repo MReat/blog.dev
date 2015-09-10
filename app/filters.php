@@ -48,13 +48,21 @@ Route::filter('auth', function()
 	}
 });
 
+Route::filter('isAdmin', function() {
+	if(Auth::user()->role != 'admin') {
+		return Redirect::action('PostsController@index');
+	}
+
+});
+
+
 Route::filter('isOwnerAdmin', function($route) { 
 	$id = $route->getParameter('posts');
 	
 	$post = Post::find($id);
 	$user_id = $post->user_id;
 
-	if(Auth::id() != $user_id && Auth::user()->role != 'admin'){
+	if(!(Auth::id() == $user_id || Auth::user()->role == 'admin')) {
 
 		return Redirect::action('PostsController@index');
 	}
@@ -96,8 +104,9 @@ Route::filter('guest', function()
 
 Route::filter('csrf', function()
 {
-	if (Session::token() !== Input::get('_token'))
-	{
-		throw new Illuminate\Session\TokenMismatchException;
-	}
+    $token = Request::ajax() ? Request::header('X-Csrf-Token') : Input::get('_token');
+    
+    if (Session::token() !== $token) {
+        throw new Illuminate\Session\TokenMismatchException;
+    }
 });

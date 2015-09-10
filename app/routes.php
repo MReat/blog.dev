@@ -9,6 +9,10 @@ Route::get('detail', 'HomeController@showDetail');
 
 Route::get('portfolio', 'HomeController@showPortfolio');
 
+Route::get('posts/manage', 'PostsController@getManage');
+
+Route::get('posts/list', 'PostsController@getList');
+
 Route::resource('posts', 'PostsController');
 
 Route::get('login', 'HomeController@login');
@@ -34,3 +38,5 @@ Route::get('calculator', 'HomeController@showCalculator');
 Route::get('simple-simon', 'HomeController@showSimpleSimon');
 
 Route::get('whack-a-bell', 'HomeController@showWhackABell');
+
+

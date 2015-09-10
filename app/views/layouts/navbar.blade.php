@@ -33,6 +33,9 @@
 		                  	@else
 				                <li><a href="/posts/?user={{{ Auth::id() }}}">My Posts</a></li>
 				                <li><a href="{{{ action('HomeController@showUser') }}}">My Account</a></li>
+				                @if(Auth::user()->role == 'admin')
+					                <li><a href="{{{ action('PostsController@getManage') }}}">Manage Posts</a></li>
+				                @endif
 				                <li role="separator" class="divider"></li>
 				                <li><a href="{{{ action('HomeController@doLogout') }}}">Logout</a></li>
 				            @endif

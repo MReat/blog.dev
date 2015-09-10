@@ -7,6 +7,9 @@ class PostsController extends \BaseController {
 	{
 		parent::__construct();
 
+		// Filter for isAdmin
+		$this->beforeFilter('isAdmin', array('only' => array('getManage')));
+		
 		// Filter for isOwnerAdmin
 		$this->beforeFilter('isOwnerAdmin', array('only' => array('edit', 'update', 'destroy')));
 
@@ -91,13 +94,20 @@ if (Input::has('search')){
 
 	    
 			$uploads_directory = 'img/uploads/';
-			$filename = Input::file('image')->getClientOriginalName();
+
+
+
 			
 			$post = new Post();
 			$post->title =  Input::get('title');
 			$post->body =  Input::get('body');
 			$post->user_id = Auth::id();
-			$post->image = Input::file('image')->move($uploads_directory, $filename);
+			
+			if(Input::hasFile('image')) {
+				$filename = Input::file('image')->getClientOriginalName();	
+				$post->image = Input::file('image')->move($uploads_directory, $filename);
+			}
+
 			$post->save();
 
 			Log::info('Post successfully saved.', Input::all());
@@ -210,20 +220,46 @@ if (Input::has('search')){
 	 * @param  int  $id
 	 * @return Response
 	 */
+
+
 	public function destroy($id)
-	{
-		$post = Post::find($id);
-		
+    {
+
+        $post = Post::find($id);
+
 		if(!$post){
 			Log::info(Input::all());
 			Session::flash('errorMessage', 'Page not found');
 			App::abort(404);
 		}
-		
+
 		$post->delete();
-		Log::info(Input::all());
-		return Redirect::action('PostsController@index');
+
+        // Modify destroy() to send back JSON if it's been requested
+        if (Request::wantsJson()) {
+
+        	Session::flash('successMessage', 'Post Successfully Deleted.');
+            return Response::json(array("message" => "post deleted"));
+
+        } else {
+            return Redirect::action('PostsController@index');
+        }
+
+        
+    }
+
+	public function getManage () {
+
+		return View::make('posts.manage');
+
 	}
 
+	public function getList () {
+
+		$posts = Post::with('user')->get();
+
+		return Response::json($posts);
+		
+	}
 
 }
