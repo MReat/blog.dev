@@ -6,7 +6,7 @@ Whack-A-Mole
 @stop
 
 @section('style')
-	<link rel="stylesheet" type="text/css" href="/css/whack-a-mole.css">
+	<link rel="stylesheet" type="text/css" href="/css/Whack-a-Mole.css">
 @stop
 
 
