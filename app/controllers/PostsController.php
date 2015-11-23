@@ -32,7 +32,7 @@ class PostsController extends \BaseController {
 			$query = Post::with('user')->where('user_id', Auth::id());
 		}
 		
-if (Input::has('search')){
+		if (Input::has('search')){
 	    	$search = Input::get('search');
 	    	$query->where('title', 'LIKE', '%' . $search . '%');
 	    	$query->orWhereHas('user', function($q){
@@ -44,6 +44,7 @@ if (Input::has('search')){
 	    		$q->where('last_name', 'LIKE', '%' . $search . '%');
 	    	});
 	    }
+	    
 		$posts = $query->orderBy('created_at', 'desc')->paginate(10);
 		
 		foreach($posts as $post){
@@ -95,9 +96,6 @@ if (Input::has('search')){
 	    
 			$uploads_directory = 'img/uploads/';
 
-
-
-			
 			$post = new Post();
 			$post->title =  Input::get('title');
 			$post->body =  Input::get('body');

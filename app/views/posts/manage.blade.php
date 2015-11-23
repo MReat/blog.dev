@@ -32,7 +32,7 @@
 							<td> @{{ p.user.first_name }} @{{ p.user.last_name }} </td>
 							<td> @{{ formatDate(p.created_at.date) | date: "longDate" }} </td>
 							<td>
-								<a class="btn btn-danger" ng-click="deletePost(post.id, index)">
+								<a class="btn btn-danger" id="delete" ng-click="deletePost(post.id, index)">
 									<span class="glyphicon glyphicon-remove"></span> Delete</a> 
 								<button type="button" class="btn btn-success" data-toggle="modal" ng-click="open($index)">
 									<span class="glyphicon glyphicon-pencil"></span> Edit</button>
@@ -55,6 +55,7 @@
 <script type="text/javascript" src="/js/blog.js"></script>
 <script type="text/javascript">
 
+// Active tab in navbar functionality below
 var url = window.location;
 // Will only work if string in href matches with location
 $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
@@ -63,5 +64,6 @@ $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
 $('ul.nav a').filter(function() {
     return this.href == url;
 }).parent().addClass('active');
+
 </script>
 @stop
